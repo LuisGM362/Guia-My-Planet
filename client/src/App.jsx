@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 function App() {
   const [opciones, setOpciones] = useState([]);
@@ -16,15 +17,20 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <Container className="mt-2 text-center">
       <h1>My Planet Guide</h1>
-      <h2>Opciones</h2>
-      <ul>
+      <Row className="justify-content-center">
         {opciones.map((opcion, index) => (
-          <li key={index}>{opcion}</li>
+          <Col key={index} sm={4} className="d-flex justify-content-center">
+            <Card className="m-2 text-center" style={{ width: '18rem' }}>
+              <Card.Body>
+                <Card.Title>{opcion}</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </ul>
-    </div>
+      </Row>
+    </Container>
   );
 }
 
