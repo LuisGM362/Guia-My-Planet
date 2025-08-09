@@ -17,8 +17,8 @@ function App() {
   }, []);
 
   return (
-    <Container className="mt-2 text-center">
-      <h1>My Planet Guide</h1>
+    <Container className="mt-0 pt-0">
+      <h1 className="text-center">My Planet Guide</h1>
       <Row className="justify-content-center">
         {opciones.map((opcion, index) => (
           <Col key={index} sm={4} className="d-flex justify-content-center">
