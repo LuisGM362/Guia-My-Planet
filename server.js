@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/opciones', (req, res) => {
-  res.json(["Opción 1", "Opción 2", "Opción 3"]);
+  res.json(["Guia de inicio", "Guia de consulta", "Guia de victoria"]);
 });
 
 const PORT = 3001;
