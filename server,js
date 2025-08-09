@@ -1,11 +1,15 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
-const port = 3001;
+app.use(cors());
 app.use(express.json());
-const opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
+
 app.get('/opciones', (req, res) => {
-res.json(opciones);
+  res.json(["Opción 1", "Opción 2", "Opción 3"]);
 });
-app.listen(port, () => {
-    console.log('Servidor corriendo en http://localhost:${port}');
+
+const PORT = 3001;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });
