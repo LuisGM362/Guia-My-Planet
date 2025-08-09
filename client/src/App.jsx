@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import GuiaInicio from './GuiaInicio.jsx';
 
 function App() {
   const [opciones, setOpciones] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get('http://localhost:3001/opciones')
@@ -16,17 +19,31 @@ function App() {
       });
   }, []);
 
+  const handleClick = (opcion) => {
+    if (opcion === "Guia de inicio") {
+      navigate('/guia-inicio');
+    }
+    // Aquí podés agregar lógica para otros botones
+  };
+
   return (
-    <Container className="mt-0 pt-0">
-      <h1 className="text-center">My Planet Guide</h1>
-      <Row className="justify-content-center">
-        {opciones.map((opcion, index) => (
-          <Col key={index} sm={4} className="d-flex justify-content-center">
-            <Button variant="primary" className="m-2">{opcion}</Button>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <Routes>
+      <Route path="/" element={
+        <Container className="mt-0 pt-0">
+          <h1 className="text-center">My Planet Guide</h1>
+          <Row className="justify-content-center">
+            {opciones.map((opcion, index) => (
+              <Col key={index} sm={4} className="d-flex justify-content-center">
+                <Button variant="primary" className="m-2" onClick={() => handleClick(opcion)}>
+                  {opcion}
+                </Button>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      } />
+      <Route path="/guia-inicio" element={<GuiaInicio />} />
+    </Routes>
   );
 }
 
