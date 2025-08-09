@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function App() {
   const [opciones, setOpciones] = useState([]);
@@ -22,11 +22,7 @@ function App() {
       <Row className="justify-content-center">
         {opciones.map((opcion, index) => (
           <Col key={index} sm={4} className="d-flex justify-content-center">
-            <Card className="m-2 text-center" style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title>{opcion}</Card.Title>
-              </Card.Body>
-            </Card>
+            <Button variant="primary" className="m-2">{opcion}</Button>
           </Col>
         ))}
       </Row>
