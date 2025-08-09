@@ -27,6 +27,7 @@ function GuiaInicio() {
         Tira el dado, si sale el numero 1, toma una <strong>KING CARD</strong> o <strong>TROOP CARD</strong>.
         Si sale otro numero, toma desde tu mazo de <strong>TROOP CARD</strong> el mismo numero de <strong>UNIT SOLDIER</strong>, 
         luego estas se deben ubicar en la zona <strong>TROOP LIST.</strong>
+        Ubica estas <strong>UNIT</strong> dentro de tu <strong>BASE: FILA 1 - 3 / COLUMNA 1 - 7</strong>.
         <br />
         <strong>Paso 3:</strong>
         <br />
