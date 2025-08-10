@@ -26,14 +26,19 @@ function GuiaInicio() {
         <br />
         Tira el dado, si sale el numero 1, toma una <strong>KING CARD</strong> o <strong>TROOP CARD</strong>.
         Si sale otro numero, toma desde tu mazo de <strong>TROOP CARD</strong> el mismo numero de <strong>UNIT SOLDIER</strong>, 
-        luego estas se deben ubicar en la zona <strong>TROOP LIST.</strong>
-        Ubica estas <strong>UNIT</strong> dentro de tu <strong>BASE: FILA 1 - 3 / COLUMNA 1 - 7</strong>.
+        luego estas se deben ubicar en la zona <strong>TROOP LIST</strong>.
+        Ubica estas <strong>UNIT</strong> dentro de tu <strong>BASE: FILA 1 - 3 / COLUMNA 1 - 13</strong>
         <br />
         <strong>Paso 3:</strong>
         <br />
         Activo el <strong>POINT.</strong>
         <br />
         <PointActivator />
+        <br />
+        <strong>Paso 4:</strong>
+        <br />
+        Toma de la zona de <strong>KING CARD</strong>, tantas hasta que tengas 3 en tu mano,
+        si ya tienes mas de 3 <strong>CARD</strong> no sacas ninguna.
       </p>
       <p className="text-center">Contenido de la guia de inicio.</p>
       <div className="fixed-bottom bg-light py-2 border-top text-center">
