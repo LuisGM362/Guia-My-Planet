@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import PointActivator from './components/PointActivator';
+import ChestActivator from './components/ChestActivator';
 
 function GuiaInicio() {
   const navigate = useNavigate();
@@ -39,8 +40,14 @@ function GuiaInicio() {
         <br />
         Toma de la zona de <strong>KING CARD</strong>, tantas hasta que tengas 3 en tu mano,
         si ya tienes mas de 3 <strong>CARD</strong> no sacas ninguna.
+        <br />
+        <strong>Paso 5:</strong>
+        <br />
+        Tira el dado, segun ese numero puedes ubicar los <strong>CHEST</strong> dentro de la zona 
+        <strong>COMBAT (FILA 4 - 10 / COLUMNA 1 - 13)</strong>
+        <br />
       </p>
-      <p className="text-center">Contenido de la guia de inicio.</p>
+      <p className="text-center">Fin de la guia de inicio.</p>
       <div className="fixed-bottom bg-light py-2 border-top text-center">
         <Button variant="secondary" onClick={handleVolver}>
           ← Volver inicio

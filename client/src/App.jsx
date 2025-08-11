@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   const handleClick = (opcion) => {
-    if (opcion === "Guia de inicio") {
+    if (opcion === "Guia de Inicio") {
       console.log("Navegando a /guia-inicio");
       navigate('/guia-inicio');
     }
