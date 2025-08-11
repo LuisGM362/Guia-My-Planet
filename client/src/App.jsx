@@ -10,17 +10,19 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/opciones')
-      .then(response => {
-        setOpciones(response.data);
-      })
-      .catch(error => {
-        console.error("Error al obtener opciones:", error);
-      });
+  axios.get('http://localhost:3001/opciones')
+    .then(response => {
+      console.log("Opciones recibidas:", response.data);
+      setOpciones(response.data);
+    })
+    .catch(error => {
+      console.error("Error al obtener opciones:", error);
+    });
   }, []);
 
   const handleClick = (opcion) => {
     if (opcion === "Guia de inicio") {
+      console.log("Navegando a /guia-inicio");
       navigate('/guia-inicio');
     }
     // Aquí podés agregar lógica para otros botones
