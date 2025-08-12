@@ -2,14 +2,73 @@ import React, { useState } from 'react';
 import { Container, Button, ListGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+const skillsDetalles = [
+  {
+    nombre: 'CALL',
+    descripcion:
+      `Al usar esta SKILL se llama al tablero una UNIT SOLDIER, 
+      mientras no haya el UNIT MAX de la misma, se ubica en el POINT.`
+  },
+  {
+    nombre: 'CHEST',
+    descripcion:
+      `Al usar esta SKILL tiene el efecto de crear una pieza que ocupa una casilla
+       en el tablero de juego que contiene una AMMO, esta pieza queda fija y no se puede mover, 
+       solamente se puede crear esta pieza en tu zona COMBAT en un lugar seleccionado, 
+       cuando una UNIT llega a el lugar de esta pieza se obtiene la AMMO y 
+       se equipa a la UNIT que la obtuvo.`
+  },
+  {
+    nombre: 'POINT',
+    descripcion:
+      'Al usar esta SKILL tiene el efecto de crear una marca en una casilla en el tablero de juego, esta marca queda fija y de ella será el lugar de llamada de las nuevas UNIT que sean llamadas al tablero del juego, solamente se puede crear esta marca en tu BASE.'
+  },
+  {
+    nombre: 'REINFORCE',
+    descripcion:
+      'Al usar esta SKILL tiene el efecto de tomar una TROOP CARD de la zona de TROOP CARDS y añadirla a tu mano.'
+  },
+  {
+    nombre: 'ESCAPE',
+    descripcion:
+      'Al usar esta SKILL tiene el efecto de poder mover la UNIT KING para izquierda o derecha al final del tablero. Este MOV no consume COST, esto se puede realizar mientras no haya ninguna pieza en el tablero que interrumpa el MOV.'
+  },
+  {
+    nombre: 'RELOAD',
+    descripcion:
+      'Al usar esta SKILL recupera la última carta de la zona de TRASH y la devuelve a tu mano.'
+  },
+  {
+    nombre: 'HELP',
+    descripcion:
+      'Al usar esta SKILL tiene el efecto de si una UNIT rival entra en tu BASE, puedes mover una UNIT a dos casillas de distancia de la UNIT KING que se encuentre dentro de tu BASE y cubrir cualquier zona de una casilla adyacente de la UNIT KING.'
+  },
+  {
+    nombre: 'WALL',
+    descripcion:
+      'Al usar esta SKILL tiene el efecto de crear una pieza que ocupa una casilla en el tablero de juego que puede ser destruida con ATK del rival, esta pieza queda fija y no se puede mover, solamente se puede crear esta pieza en tu BASE en un lugar adyacente de la UNIT KING que esté libre, solo se puede usar esta SKILL una vez por turno.'
+  },
+  {
+    nombre: 'KING CALL',
+    descripcion:
+      'Al usar esta SKILL tiene el efecto de tomar una KING CARD de la zona de KING CARDS y añadirla a tu mano.'
+  },
+  {
+    nombre: 'TARGET',
+    descripcion:
+      'Al usar esta SKILL tiene el efecto de posicionar el TARGET en la posición de la UNIT rival seleccionada que esté en tu BASE.'
+  },
+  {
+    nombre: 'SELF-DESTRUCTION',
+    descripcion:
+      'Al usar esta SKILL se crea una pieza que no se coloca en el tablero, se debe tener tres piezas para hacer que la partida termine en empate, se puede utilizar esta SKILL solamente una vez por turno.'
+  }
+];
+
 const secciones = [
   {
     titulo: 'SKILLS',
-    detalles: [
-      'MOV: Permite mover la UNIT en el tablero según la dirección y rango indicados en la carta.',
-      'ATK: Permite atacar a otra pieza en el tablero. La posición marcada con "x" indica la pieza que será eliminada.',
-      'ESPECIAL: Habilidades únicas que pueden ser MOV, ATK o SKILL, activadas usando el COST indicado en la carta.'
-    ]
+    detalles: skillsDetalles
   },
   {
     titulo: 'KING CARDS',
