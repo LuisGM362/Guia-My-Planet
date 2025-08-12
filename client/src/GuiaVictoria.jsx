@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
+import KingCheckSpawn from './components/KingCheckSpawn.jsx';
 
 function GuiaVictoria() {
   return (
