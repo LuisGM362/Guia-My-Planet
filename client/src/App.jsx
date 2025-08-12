@@ -5,6 +5,8 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import GuiaInicio from './GuiaInicio.jsx';
 import GuiaTurno from './GuiaTurno.jsx';
+import GuiaVictoria from './GuiaVictoria.jsx';
+
 
 function App() {
   const opciones = ["Guia de Inicio", "Guia de Turno", "Guia de Consulta", "Guia de Victoria"];
