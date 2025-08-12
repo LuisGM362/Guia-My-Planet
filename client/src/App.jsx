@@ -6,7 +6,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import GuiaInicio from './GuiaInicio.jsx';
 
 function App() {
-  const [opciones, setOpciones] = useState(["Guia de Inicio", "Guia Consulta", "Guia Victoria"]);
+  const [opciones, setOpciones] = useState(["Guia de Inicio", "Guia de Consulta", "Guia de Victoria"]);
   const navigate = useNavigate();
 
   // Comentamos el useEffect para probar con valores hardcodeados
