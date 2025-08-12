@@ -6,7 +6,7 @@ const KingCheckSpawn = () => {
   const [spawnData, setSpawnData] = useState({});
 
   const activarSpawn = () => {
-    const fila = Math.floor(Math.random() * 7) + 4; // FILA 4 - 10
+    const fila = Math.floor(Math.random() * 3) + 1; // FILA 1 - 3
     const columna = Math.floor(Math.random() * 13) + 1; // COLUMNA 1 - 13
     setSpawnData({ fila, columna });
     setSpawnActivado(true);
