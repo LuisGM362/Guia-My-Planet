@@ -20,6 +20,7 @@ function GuiaVictoria() {
         primero eliminar a la <strong>UNIT KING</strong>.
         Activo posicion de la <strong>UNIT KING CHECK</strong> en el tablero de juego,
         esta se ubica en la zona de <strong>BASE (FILA 1 - 3 / COLUMNA 1 - 13)</strong>.
+        <br />
         <strong>UNIT KING CHECK</strong> ubicar en:
         <br />
         <KingCheckSpawn />
