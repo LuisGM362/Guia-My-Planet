@@ -61,8 +61,8 @@ function GuiaTurno() {
         <strong>ATK:</strong> esto indica el ataque que puede realizar la pieza dentro del tablero hacia otra pieza,
         la x indica la posición de la pieza que será eliminada del tablero: 
         la x indica en qué posición debe estar una pieza para que sea eliminada por esta <strong>UNIT</strong>, 
-        cuando la <strong>UNIT</strong> realiza un <strong>ATK</strong> hace que se active el <strong>TARGET</strong> 
-        del rival en la posición de la <strong>UNIT</strong> que realizó el <strong>ATK</strong>. 
+        cuando la <strong>UNIT</strong> realiza un <strong>ATK</strong> hace que se active el <strong>TARGET</strong> del 
+        rival en la posición de la <strong>UNIT</strong> que realizó el <strong>ATK</strong>. 
         Al final de realizar el <strong>ATK</strong> la <strong>UNIT</strong> no se mueve del lugar 
         al menos que se realice un <strong>MOV</strong>, si se efectúa un <strong>ATK SILENCE</strong> 
         no hará que se active el <strong>TARGET</strong>.
