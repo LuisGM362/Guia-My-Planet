@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Button, ListGroup, Form } from 'react-bootstrap';
+import { Container, Button, ListGroup, Form, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const skillsDetalles = [
@@ -92,6 +92,7 @@ const GuiaConsulta = () => {
   const navigate = useNavigate();
   const [seleccion, setSeleccion] = useState(null);
   const [busqueda, setBusqueda] = useState("");
+  const [modalSkill, setModalSkill] = useState(null);
 
   // Filtrar skills por nombre
   const skillsFiltradas = skillsDetalles.filter(skill =>
@@ -139,12 +140,31 @@ const GuiaConsulta = () => {
               <ul>
                 {skillsFiltradas.length > 0 ? (
                   skillsFiltradas.map((detalle, i) => (
-                    <li key={i}>{detalle.nombre}</li>
+                    <li
+                      key={i}
+                      style={{ cursor: 'pointer', textDecoration: 'underline' }}
+                      onClick={() => setModalSkill(detalle)}
+                    >
+                      {detalle.nombre}
+                    </li>
                   ))
                 ) : (
                   <li>No se encontraron skills.</li>
                 )}
               </ul>
+              <Modal show={!!modalSkill} onHide={() => setModalSkill(null)} centered>
+                <Modal.Header closeButton>
+                  <Modal.Title>{modalSkill?.nombre}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body style={{ whiteSpace: 'pre-line' }}>
+                  {modalSkill?.descripcion}
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={() => setModalSkill(null)}>
+                    Cerrar
+                  </Button>
+                </Modal.Footer>
+              </Modal>
             </>
           ) : (
             <ul>
@@ -166,5 +186,4 @@ const GuiaConsulta = () => {
     </Container>
   );
 };
-
 export default GuiaConsulta;
