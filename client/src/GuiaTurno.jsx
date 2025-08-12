@@ -53,19 +53,21 @@ function GuiaTurno() {
         <br />
         Cada TROOP CARD posee <strong>SKILLS</strong>, estas son detalladas de la siguiente forma:
         <br />
+        <br />
         <strong>MOV:</strong> esto indica el movimiento que puede realizar la pieza dentro del tablero de juego, 
         el movimiento está indicado de la siguiente forma: la flecha indica la dirección donde la pieza 
         se puede mover en el tablero, dependiendo del tamaño de la flecha será el rango de movimiento de la misma pieza, 
         la flecha indica que la pieza puede hacer movimiento.
-        <br />
+        <br /><br />
         <strong>ATK:</strong> esto indica el ataque que puede realizar la pieza dentro del tablero hacia otra pieza,
         la x indica la posición de la pieza que será eliminada del tablero: 
         la x indica en qué posición debe estar una pieza para que sea eliminada por esta <strong>UNIT</strong>, 
         cuando la <strong>UNIT</strong> realiza un <strong>ATK</strong> hace que se active el <strong>TARGET</strong> del 
         rival en la posición de la <strong>UNIT</strong> que realizó el <strong>ATK</strong>. 
         Al final de realizar el <strong>ATK</strong> la <strong>UNIT</strong> no se mueve del lugar 
-        al menos que se realice un <strong>MOV</strong>, si se efectúa un <strong>ATK SILENCE</strong> 
-        no hará que se active el <strong>TARGET</strong>.
+        al menos que se realice un <strong>MOV</strong>, si se efectúa un <strong>ATK SILENCE</strong> no 
+        hará que se active el <strong>TARGET</strong>.
+        <br />
         <br />
         <strong>ESPECIAL:</strong> esto indica ya sea un <strong>MOV o ATK o SKILL</strong>, 
         las <strong>SKILL</strong> pueden usarse con el <strong>COST</strong> indicado en el detalle de la carta.
