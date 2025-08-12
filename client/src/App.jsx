@@ -6,7 +6,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import GuiaInicio from './GuiaInicio.jsx';
 
 function App() {
-  const [opciones, setOpciones] = useState([]);
+  const [opciones, setOpciones] = useState(["Guia de Inicio", "Opción 2", "Opción 3"]);
   const navigate = useNavigate();
 
   useEffect(() => {
