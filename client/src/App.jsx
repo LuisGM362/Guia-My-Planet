@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import GuiaInicio from './GuiaInicio.jsx';
+import GuiaTurno from './GuiaTurno.jsx';
 
 function App() {
   const opciones = ["Guia de Inicio", "Guia de Turno", "Guia de Consulta", "Guia de Victoria"];
@@ -26,6 +27,10 @@ function App() {
       console.log("Navegando a /guia-inicio");
       navigate('/guia-inicio');
     }
+    else if (opcion === "Guia de Turno") {
+      console.log("Navegando a /guia-turno");
+      navigate('/guia-turno');
+    }
     // Aquí podés agregar lógica para otros botones
   };
 
@@ -46,6 +51,7 @@ function App() {
         </Container>
       } />
       <Route path="/guia-inicio" element={<GuiaInicio />} />
+      <Route path="/guia-turno" element={<GuiaTurno />} />
     </Routes>
   );
 }

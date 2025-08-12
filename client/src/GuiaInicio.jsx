@@ -32,7 +32,7 @@ function GuiaInicio() {
         <br />
         <strong>Paso 3:</strong>
         <br />
-        Activo el <strong>POINT.</strong>
+        Activo el <strong>POINT:</strong>
         <br />
         <PointActivator />
         <br />
@@ -45,6 +45,8 @@ function GuiaInicio() {
         <br />
         Tira el dado, segun ese numero puedes ubicar los <strong>CHEST</strong> dentro de la zona 
         <strong>COMBAT (FILA 4 - 10 / COLUMNA 1 - 13)</strong>
+        <br />
+        Activo el <strong>CHEST:</strong>
         <br />
         <ChestActivator />
         <br />
