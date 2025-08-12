@@ -119,17 +119,23 @@ const GuiaConsulta = () => {
       )}
       {seleccion !== null && (
         <>
-          <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
-          <ul>
-            {secciones[seleccion].detalles.map((detalle, i) => (
-              <li key={i}>{detalle}</li>
-            ))}
-          </ul>
-          <Button variant="secondary" onClick={handleVolver}>
+            <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
+            <ul>
+            {secciones[seleccion].titulo === 'SKILLS'
+                ? secciones[seleccion].detalles.map((detalle, i) => (
+                    <li key={i} style={{ whiteSpace: 'pre-line', marginBottom: '1em' }}>
+                    <strong>{detalle.nombre}:</strong> {detalle.descripcion}
+                    </li>
+                ))
+                : secciones[seleccion].detalles.map((detalle, i) => (
+                    <li key={i}>{detalle}</li>
+                ))}
+            </ul>
+            <Button variant="secondary" onClick={handleVolver}>
             ← Volver a secciones
-          </Button>
+            </Button>
         </>
-      )}
+        )}
       <div className="fixed-bottom bg-light py-2 border-top text-center">
         <Button variant="secondary" onClick={() => navigate('/')}>
           ← Volver inicio
