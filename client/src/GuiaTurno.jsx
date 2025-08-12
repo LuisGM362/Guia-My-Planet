@@ -43,23 +43,22 @@ function GuiaTurno() {
         <strong>ELITE CARD:</strong> denotada con la letra E.<br />
         <strong>KING CARD:</strong> denotada con la letra KC.<br />
         <strong>KING:</strong> denotada con la letra K.<br /><br />
-        Cada TROOP CARD posee <strong>NAME</strong>, en este se describe el nombre de la <strong>UNIT</strong>.
+        Cada <strong>TROOP CARD</strong> posee <strong>NAME</strong>, en este se describe el nombre de la <strong>UNIT</strong>.
         <br />
-        Cada TROOP CARD posee <strong>UNIT MAX</strong>, este indica la cantidad máxima de piezas 
+        Cada <strong>TROOP CARD</strong> posee <strong>UNIT MAX</strong>, este indica la cantidad máxima de piezas 
         que pueden haber en el tablero en el momento del juego, la <strong>UNIT KING</strong> es <strong>UNIQUE</strong>.
         <br />
-        Cada TROOP CARD posee <strong>EQUIP MAX</strong>, esta describe cuántas <strong>AMMO</strong> puede llevar 
+        Cada <strong>TROOP CARD</strong> posee <strong>EQUIP MAX</strong>, esta describe cuántas <strong>AMMO</strong> puede llevar 
         equipada la pieza en el tablero.
         <br />
-        Cada TROOP CARD posee <strong>SKILLS</strong>, estas son detalladas de la siguiente forma:
+        Cada <strong>TROOP CARD</strong> posee <strong>SKILLS</strong>, estas son detalladas de la siguiente forma:
         <br />
-        <br />
-        <strong>MOV:</strong> esto indica el movimiento que puede realizar la pieza dentro del tablero de juego, 
+            <strong>MOV:</strong> esto indica el movimiento que puede realizar la pieza dentro del tablero de juego, 
         el movimiento está indicado de la siguiente forma: la flecha indica la dirección donde la pieza 
         se puede mover en el tablero, dependiendo del tamaño de la flecha será el rango de movimiento de la misma pieza, 
         la flecha indica que la pieza puede hacer movimiento.
-        <br /><br />
-        <strong>ATK:</strong> esto indica el ataque que puede realizar la pieza dentro del tablero hacia otra pieza,
+        <br />
+            <strong>ATK:</strong> esto indica el ataque que puede realizar la pieza dentro del tablero hacia otra pieza,
         la x indica la posición de la pieza que será eliminada del tablero: 
         la x indica en qué posición debe estar una pieza para que sea eliminada por esta <strong>UNIT</strong>, 
         cuando la <strong>UNIT</strong> realiza un <strong>ATK</strong> hace que se active el <strong>TARGET</strong> del 
@@ -68,8 +67,7 @@ function GuiaTurno() {
         al menos que se realice un <strong>MOV</strong>, si se efectúa un <strong>ATK SILENCE</strong> no 
         hará que se active el <strong>TARGET</strong>.
         <br />
-        <br />
-        <strong>ESPECIAL:</strong> esto indica ya sea un <strong>MOV o ATK o SKILL</strong>, 
+            <strong>ESPECIAL:</strong> esto indica ya sea un <strong>MOV o ATK o SKILL</strong>, 
         las <strong>SKILL</strong> pueden usarse con el <strong>COST</strong> indicado en el detalle de la carta.
         <br />
         Cada <strong>TROOP CARD</strong> posee <strong>COST</strong>, 
