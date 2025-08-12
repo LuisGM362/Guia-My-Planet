@@ -5,6 +5,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import GuiaInicio from './GuiaInicio.jsx';
 import GuiaTurno from './GuiaTurno.jsx';
+import GuiaConsulta from './GuiaConsulta.jsx';
 import GuiaVictoria from './GuiaVictoria.jsx';
 
 
@@ -35,7 +36,7 @@ function App() {
     }
     else if (opcion === "Guia de Consulta") {
       console.log("Navegando a /guia-consulta");
-      // Aquí podrías agregar la lógica para navegar a la guía de consulta
+      navigate('/guia-consulta');
     }
     else if (opcion === "Guia de Victoria") {
       console.log("Navegando a /guia-victoria");
@@ -62,7 +63,7 @@ function App() {
       } />
       <Route path="/guia-inicio" element={<GuiaInicio />} />
       <Route path="/guia-turno" element={<GuiaTurno />} />
-      <Route path="/guia-consulta" element={<div>Guia de Consulta (en construcción)</div>} />
+      <Route path="/guia-consulta" element={<GuiaConsulta />} />
       <Route path="/guia-victoria" element={<GuiaVictoria />} />
     </Routes>
   );
