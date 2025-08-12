@@ -9,16 +9,17 @@ function App() {
   const [opciones, setOpciones] = useState(["Guia de Inicio", "Opción 2", "Opción 3"]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-  axios.get('http://localhost:3001/opciones')
-    .then(response => {
-      console.log("Opciones recibidas:", response.data);
-      setOpciones(response.data);
-    })
-    .catch(error => {
-      console.error("Error al obtener opciones:", error);
-    });
-  }, []);
+  // Comentamos el useEffect para probar con valores hardcodeados
+  // useEffect(() => {
+  //   axios.get('http://localhost:3001/opciones')
+  //     .then(response => {
+  //       console.log("Opciones recibidas:", response.data);
+  //       setOpciones(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error("Error al obtener opciones:", error);
+  //     });
+  // }, []);
 
   const handleClick = (opcion) => {
     if (opcion === "Guia de Inicio") {
