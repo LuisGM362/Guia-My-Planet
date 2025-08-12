@@ -49,6 +49,7 @@ function GuiaInicio() {
         <ChestActivator />
         <br />
         <strong>Paso en turno:</strong>
+        <br />
         Cada inicio de turno tira el dado, si sale el numero 1 puedes tomar una 
         <strong>KING CARD</strong> o <strong>TROOP CARD</strong> y luego vuelve a lanzar el dado.
         Puedes activar de tu mano una  o varias <strong>CARD</strong> sin importar el orden de ejecucion,

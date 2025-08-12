@@ -6,7 +6,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import GuiaInicio from './GuiaInicio.jsx';
 
 function App() {
-  const opciones = ["Guia de Inicio", "Guia de Consulta", "Guia de Victoria"];
+  const opciones = ["Guia de Inicio", "Guia de Turno", "Guia de Consulta", "Guia de Victoria"];
   const navigate = useNavigate();
 
   // Comentamos el useEffect para probar con valores hardcodeados
