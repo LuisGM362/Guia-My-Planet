@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Button, ListGroup, Form, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import ChestActivator from './components/ChestActivator';
+import PointActivator from './components/PointActivator';
 
 const skillsDetalles = [
   {
@@ -23,7 +24,10 @@ se equipa a la UNIT que la obtuvo.`,
   {
     nombre: 'POINT',
     descripcion:
-      'Al usar esta SKILL tiene el efecto de crear una marca en una casilla en el tablero de juego, esta marca queda fija y de ella será el lugar de llamada de las nuevas UNIT que sean llamadas al tablero del juego, solamente se puede crear esta marca en tu BASE.'
+      `Al usar esta SKILL tiene el efecto de crear una marca en una casilla en el tablero de juego, 
+      esta marca queda fija y de ella será el lugar de llamada de las nuevas UNIT que sean llamadas al tablero del juego, 
+      solamente se puede crear esta marca en tu BASE.`,
+    componente: <PointActivator />
   },
   {
     nombre: 'REINFORCE',
@@ -33,7 +37,8 @@ se equipa a la UNIT que la obtuvo.`,
   {
     nombre: 'ESCAPE',
     descripcion:
-      'Al usar esta SKILL tiene el efecto de poder mover la UNIT KING para izquierda o derecha al final del tablero. Este MOV no consume COST, esto se puede realizar mientras no haya ninguna pieza en el tablero que interrumpa el MOV.'
+      `Al usar esta SKILL tiene el efecto de poder mover la UNIT KING para izquierda o derecha al final del tablero. 
+      Este MOV no consume COST, esto se puede realizar mientras no haya ninguna pieza en el tablero que interrumpa el MOV.`
   },
   {
     nombre: 'RELOAD',
@@ -43,12 +48,17 @@ se equipa a la UNIT que la obtuvo.`,
   {
     nombre: 'HELP',
     descripcion:
-      'Al usar esta SKILL tiene el efecto de si una UNIT rival entra en tu BASE, puedes mover una UNIT a dos casillas de distancia de la UNIT KING que se encuentre dentro de tu BASE y cubrir cualquier zona de una casilla adyacente de la UNIT KING.'
+      `Al usar esta SKILL tiene el efecto de si una UNIT rival entra en tu BASE, 
+      puedes mover una UNIT a dos casillas de distancia de la UNIT KING que se encuentre dentro de tu BASE y 
+      cubrir cualquier zona de una casilla adyacente de la UNIT KING.`
   },
   {
     nombre: 'WALL',
     descripcion:
-      'Al usar esta SKILL tiene el efecto de crear una pieza que ocupa una casilla en el tablero de juego que puede ser destruida con ATK del rival, esta pieza queda fija y no se puede mover, solamente se puede crear esta pieza en tu BASE en un lugar adyacente de la UNIT KING que esté libre, solo se puede usar esta SKILL una vez por turno.'
+      `Al usar esta SKILL tiene el efecto de crear una pieza que ocupa una casilla en el tablero de juego 
+      que puede ser destruida con ATK del rival, esta pieza queda fija y no se puede mover, 
+      solamente se puede crear esta pieza en tu BASE en un lugar adyacente de la UNIT KING que esté libre, 
+      solo se puede usar esta SKILL una vez por turno.`
   },
   {
     nombre: 'KING CALL',
@@ -63,7 +73,9 @@ se equipa a la UNIT que la obtuvo.`,
   {
     nombre: 'SELF-DESTRUCTION',
     descripcion:
-      'Al usar esta SKILL se crea una pieza que no se coloca en el tablero, se debe tener tres piezas para hacer que la partida termine en empate, se puede utilizar esta SKILL solamente una vez por turno.'
+      `Al usar esta SKILL se crea una pieza que no se coloca en el tablero, 
+      se debe tener tres piezas para hacer que la partida termine en empate, 
+      se puede utilizar esta SKILL solamente una vez por turno.`
   }
 ];
 
@@ -81,7 +93,7 @@ const secciones = [
     ]
   },
   {
-    titulo: 'CHEST',
+    titulo: 'AMMO',
     detalles: [
       'CHEST aparece en una posición aleatoria del tablero.',
       'Puedes activar CHEST usando el botón correspondiente.',
@@ -112,7 +124,8 @@ const GuiaConsulta = () => {
       {!seleccion && (
         <>
           <p>
-            Haz clic en una sección para ver el detalle de <strong>SKILLS</strong>, <strong>KING CARDS</strong> o <strong>CHEST</strong>.
+            Haz clic en una sección para ver el detalle de <strong>SKILLS</strong>, 
+            <strong>KING CARDS</strong> o <strong>CHEST</strong>.
           </p>
           <ListGroup>
             {secciones.map((seccion, idx) => (
