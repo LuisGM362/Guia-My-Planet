@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+//import { useState, useEffect } from 'react';
+//import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import GuiaInicio from './GuiaInicio.jsx';
 
 function App() {
-  const [opciones, setOpciones] = useState(["Guia de Inicio", "Guia de Consulta", "Guia de Victoria"]);
+  const opciones = ["Guia de Inicio", "Guia de Consulta", "Guia de Victoria"];
   const navigate = useNavigate();
 
   // Comentamos el useEffect para probar con valores hardcodeados
