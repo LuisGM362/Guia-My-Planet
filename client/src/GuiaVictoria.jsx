@@ -1,9 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import KingCheckSpawn from './components/KingCheckSpawn.jsx';
 
 function GuiaVictoria() {
+  const navigate = useNavigate();
+
+  const handleVolver = () => {
+    navigate('/');
+  };
+
   return (
     <Container className="mt-0 pt-0">
       <h1 className="text-center">Victoria en el juego</h1>
@@ -20,6 +27,12 @@ function GuiaVictoria() {
         También se termina el juego 
         con un empate cuando se activa el <strong>SELF-DESTRUCTION</strong>.
       </p>
+      <p className="text-center">Fin de la guia de turno.</p>
+      <div className="fixed-bottom bg-light py-2 border-top text-center">
+        <Button variant="secondary" onClick={handleVolver}>
+          ← Volver inicio
+        </Button>
+      </div>
     </Container>
   );
 }

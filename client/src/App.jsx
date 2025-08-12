@@ -31,6 +31,14 @@ function App() {
       console.log("Navegando a /guia-turno");
       navigate('/guia-turno');
     }
+    else if (opcion === "Guia de Consulta") {
+      console.log("Navegando a /guia-consulta");
+      // Aquí podrías agregar la lógica para navegar a la guía de consulta
+    }
+    else if (opcion === "Guia de Victoria") {
+      console.log("Navegando a /guia-victoria");
+      navigate('/guia-victoria');
+    }
     // Aquí podés agregar lógica para otros botones
   };
 
@@ -52,6 +60,8 @@ function App() {
       } />
       <Route path="/guia-inicio" element={<GuiaInicio />} />
       <Route path="/guia-turno" element={<GuiaTurno />} />
+      <Route path="/guia-consulta" element={<div>Guia de Consulta (en construcción)</div>} />
+      <Route path="/guia-victoria" element={<GuiaVictoria />} />
     </Routes>
   );
 }
