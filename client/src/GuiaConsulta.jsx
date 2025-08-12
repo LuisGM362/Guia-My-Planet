@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Button, ListGroup } from 'react-bootstrap';
+import { Container, Button, ListGroup, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const skillsDetalles = [
@@ -91,9 +91,16 @@ const secciones = [
 const GuiaConsulta = () => {
   const navigate = useNavigate();
   const [seleccion, setSeleccion] = useState(null);
+  const [busqueda, setBusqueda] = useState("");
+
+  // Filtrar skills por nombre
+  const skillsFiltradas = skillsDetalles.filter(skill =>
+    skill.nombre.toLowerCase().includes(busqueda.toLowerCase())
+  );
 
   const handleVolver = () => {
     setSeleccion(null);
+    setBusqueda("");
   };
 
   return (
@@ -119,23 +126,38 @@ const GuiaConsulta = () => {
       )}
       {seleccion !== null && (
         <>
-            <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
+          <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
+          {secciones[seleccion].titulo === 'SKILLS' ? (
+            <>
+              <Form.Control
+                type="text"
+                placeholder="Buscar skill por nombre..."
+                className="mb-3"
+                value={busqueda}
+                onChange={e => setBusqueda(e.target.value)}
+              />
+              <ul>
+                {skillsFiltradas.length > 0 ? (
+                  skillsFiltradas.map((detalle, i) => (
+                    <li key={i}>{detalle.nombre}</li>
+                  ))
+                ) : (
+                  <li>No se encontraron skills.</li>
+                )}
+              </ul>
+            </>
+          ) : (
             <ul>
-            {secciones[seleccion].titulo === 'SKILLS'
-                ? secciones[seleccion].detalles.map((detalle, i) => (
-                    <li key={i} style={{ whiteSpace: 'pre-line', marginBottom: '1em' }}>
-                    <strong>{detalle.nombre}:</strong> {detalle.descripcion}
-                    </li>
-                ))
-                : secciones[seleccion].detalles.map((detalle, i) => (
-                    <li key={i}>{detalle}</li>
-                ))}
+              {secciones[seleccion].detalles.map((detalle, i) => (
+                <li key={i}>{detalle}</li>
+              ))}
             </ul>
-            <Button variant="secondary" onClick={handleVolver}>
+          )}
+          <Button variant="secondary" onClick={handleVolver}>
             ← Volver a secciones
-            </Button>
+          </Button>
         </>
-        )}
+      )}
       <div className="fixed-bottom bg-light py-2 border-top text-center">
         <Button variant="secondary" onClick={() => navigate('/')}>
           ← Volver inicio
