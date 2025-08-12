@@ -9,16 +9,16 @@ const skillsDetalles = [
     nombre: 'CALL',
     descripcion:
       `Al usar esta SKILL se llama al tablero una UNIT SOLDIER, 
-mientras no haya el UNIT MAX de la misma, se ubica en el POINT.`
+       mientras no haya el UNIT MAX de la misma, se ubica en el POINT.`
   },
   {
     nombre: 'CHEST',
     descripcion:
       `Al usar esta SKILL tiene el efecto de crear una pieza que ocupa una casilla
-en el tablero de juego que contiene una AMMO, esta pieza queda fija y no se puede mover, 
-solamente se puede crear esta pieza en tu zona COMBAT en un lugar seleccionado, 
-cuando una UNIT llega a el lugar de esta pieza se obtiene la AMMO y 
-se equipa a la UNIT que la obtuvo.`,
+       en el tablero de juego que contiene una AMMO, esta pieza queda fija y no se puede mover, 
+       solamente se puede crear esta pieza en tu zona COMBAT en un lugar seleccionado, 
+       cuando una UNIT llega a el lugar de esta pieza se obtiene la AMMO y 
+       se equipa a la UNIT que la obtuvo.`,
     componente: <ChestActivator />
   },
   {
