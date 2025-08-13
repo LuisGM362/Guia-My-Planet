@@ -460,14 +460,24 @@ const GuiaConsulta = () => {
           </ListGroup>
         </>
       )}
+      // ...existing code...
+
       {seleccion !== null && (
         <>
           <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
-          {(secciones[seleccion].titulo === 'SKILLS' || secciones[seleccion].titulo === 'KING CARDS') ? (
+          {(secciones[seleccion].titulo === 'SKILLS' ||
+            secciones[seleccion].titulo === 'KING CARDS' ||
+            secciones[seleccion].titulo === 'AMMO') ? (
             <>
               <Form.Control
                 type="text"
-                placeholder={`Buscar ${secciones[seleccion].titulo === 'SKILLS' ? 'skill' : 'king card'} por nombre...`}
+                placeholder={`Buscar ${
+                  secciones[seleccion].titulo === 'SKILLS'
+                    ? 'skill'
+                    : secciones[seleccion].titulo === 'KING CARDS'
+                    ? 'king card'
+                    : 'ammo'
+                } por nombre...`}
                 className="mb-3"
                 value={busqueda}
                 onChange={e => setBusqueda(e.target.value)}
