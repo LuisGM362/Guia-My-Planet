@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import movImg from './assets/imagenes/mov.jpg';
 
 function GuiaTurno() {
   const navigate = useNavigate();
@@ -55,7 +56,9 @@ function GuiaTurno() {
         <br />
             <strong>MOV:</strong> esto indica el movimiento que puede realizar la pieza dentro del tablero de juego, 
         el movimiento está indicado de la siguiente forma: la flecha indica la dirección donde la pieza 
-        se puede mover en el tablero, dependiendo del tamaño de la flecha será el rango de movimiento de la misma pieza, 
+        se puede mover en el tablero, dependiendo del tamaño de la flecha será el rango de movimiento de la misma pieza.
+        <img src={movImg} alt="Ejemplo de movimiento" style={{ maxWidth: '300px', margin: '10px 0' }} />
+        <br /> 
         la flecha indica que la pieza puede hacer movimiento.
         <br />
             <strong>ATK:</strong> esto indica el ataque que puede realizar la pieza dentro del tablero hacia otra pieza,
