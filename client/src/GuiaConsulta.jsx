@@ -416,6 +416,14 @@ const GuiaConsulta = () => {
 
   // Filtrar skills o king cards por nombre según la sección seleccionada
   const detallesFiltrados = (() => {
+    if (secciones[seleccion]?.titulo === 'AMMO') {
+      return ammoDetalles
+        .map((ammo, idx) => ({ ...ammo, numero: idx + 1 }))
+        .filter(ammo =>
+          ammo.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+          ammo.numero.toString().includes(busqueda)
+        );
+    }
     if (secciones[seleccion]?.titulo === 'SKILLS') {
       return skillsDetalles.filter(skill =>
         skill.nombre.toLowerCase().includes(busqueda.toLowerCase())
@@ -425,11 +433,6 @@ const GuiaConsulta = () => {
       return kingCardDetalles.filter(card =>
         card.nombre.toLowerCase().includes(busqueda.toLowerCase())
       );
-    }
-    if (secciones[seleccion]?.titulo === 'AMMO') {
-        return ammoDetalles.filter(ammo =>
-            ammo.nombre.toLowerCase().includes(busqueda.toLowerCase())
-        );
     }
     return secciones[seleccion]?.detalles || [];
   })();
@@ -462,73 +465,81 @@ const GuiaConsulta = () => {
       )}
 
       {seleccion !== null && (
-        <>
-          <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
-          {(secciones[seleccion].titulo === 'SKILLS' ||
-            secciones[seleccion].titulo === 'KING CARDS' ||
-            secciones[seleccion].titulo === 'AMMO') ? (
-            <>
-              <Form.Control
-                type="text"
-                placeholder={`Buscar ${
-                  secciones[seleccion].titulo === 'SKILLS'
-                    ? 'skill'
-                    : secciones[seleccion].titulo === 'KING CARDS'
-                    ? 'king card'
-                    : 'ammo'
-                } por nombre...`}
-                className="mb-3"
-                value={busqueda}
-                onChange={e => setBusqueda(e.target.value)}
-              />
-              <ul>
-                {detallesFiltrados.length > 0 ? (
-                  detallesFiltrados.map((detalle, i) => (
-                    <li
-                      key={i}
-                      style={{ cursor: 'pointer', textDecoration: 'underline' }}
-                      onClick={() => setModalSkill(detalle)}
-                    >
-                      {detalle.nombre} {detalle.limit ? <span style={{ color: '#888' }}>(LIMIT {detalle.limit})</span> : null}
-                    </li>
-                  ))
-                ) : (
-                  <li>No se encontraron resultados.</li>
-                )}
-              </ul>
-              <Modal show={!!modalSkill} onHide={() => setModalSkill(null)} centered>
-                <Modal.Header closeButton>
-                  <Modal.Title>
-                    {modalSkill?.nombre} {modalSkill?.limit ? <span style={{ color: '#888', fontSize: '0.9em' }}>(LIMIT {modalSkill.limit})</span> : null}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body style={{ whiteSpace: 'pre-line' }}>
-                  {modalSkill?.descripcion}
-                  {modalSkill?.componente && (
-                    <div className="mt-3">
-                      {modalSkill.componente}
-                    </div>
-                  )}
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={() => setModalSkill(null)}>
-                    Cerrar
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-            </>
-          ) : (
+      <>
+        <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
+        {(secciones[seleccion].titulo === 'SKILLS' ||
+          secciones[seleccion].titulo === 'KING CARDS' ||
+          secciones[seleccion].titulo === 'AMMO') ? (
+          <>
+            <Form.Control
+              type="text"
+              placeholder={`Buscar ${
+                secciones[seleccion].titulo === 'SKILLS'
+                  ? 'skill'
+                  : secciones[seleccion].titulo === 'KING CARDS'
+                  ? 'king card'
+                  : 'número o nombre de ammo'
+              }...`}
+              className="mb-3"
+              value={busqueda}
+              onChange={e => setBusqueda(e.target.value)}
+            />
             <ul>
-              {secciones[seleccion].detalles.map((detalle, i) => (
-                <li key={i}>{detalle}</li>
-              ))}
+              {detallesFiltrados.length > 0 ? (
+                detallesFiltrados.map((detalle, i) => (
+                  <li
+                    key={i}
+                    style={{ cursor: 'pointer', textDecoration: 'underline' }}
+                    onClick={() => setModalSkill(detalle)}
+                  >
+                    {secciones[seleccion].titulo === 'AMMO'
+                      ? `${detalle.numero}. ${detalle.nombre}`
+                      : detalle.nombre
+                    }
+                    {detalle.limit ? <span style={{ color: '#888' }}>(LIMIT {detalle.limit})</span> : null}
+                  </li>
+                ))
+              ) : (
+                <li>No se encontraron resultados.</li>
+              )}
             </ul>
-          )}
-          <Button variant="secondary" onClick={handleVolver}>
-            ← Volver a secciones
-          </Button>
-        </>
-      )}
+            <Modal show={!!modalSkill} onHide={() => setModalSkill(null)} centered>
+              <Modal.Header closeButton>
+                <Modal.Title>
+                  {secciones[seleccion].titulo === 'AMMO' && modalSkill?.numero
+                    ? `${modalSkill.numero}. ${modalSkill.nombre}`
+                    : modalSkill?.nombre
+                  }
+                  {modalSkill?.limit ? <span style={{ color: '#888', fontSize: '0.9em' }}>(LIMIT {modalSkill.limit})</span> : null}
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body style={{ whiteSpace: 'pre-line' }}>
+                {modalSkill?.descripcion}
+                {modalSkill?.componente && (
+                  <div className="mt-3">
+                    {modalSkill.componente}
+                  </div>
+                )}
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={() => setModalSkill(null)}>
+                  Cerrar
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+        ) : (
+          <ul>
+            {secciones[seleccion].detalles.map((detalle, i) => (
+              <li key={i}>{detalle}</li>
+            ))}
+          </ul>
+        )}
+        <Button variant="secondary" onClick={handleVolver}>
+          ← Volver a secciones
+        </Button>
+      </>
+    )}
       <div className="fixed-bottom bg-light py-2 border-top text-center">
         <Button variant="secondary" onClick={() => navigate('/')}>
           ← Volver inicio
