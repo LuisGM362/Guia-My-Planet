@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import ChestActivator from './components/ChestActivator';
 import PointActivator from './components/PointActivator';
 import escapeImg from './assets/imagenes/escape.jpg';
-import atkSilenceImg from './assets/imagenes/atk_silence.jpg';
-import atkBombImg from './assets/imagenes/atk_bomb.jpg';
+import atkSilenceImg from './assets/imagenes/atkSilence.jpg';
+import atkBombImg from './assets/imagenes/atkBomb.jpg';
 
 const skillsDetalles = [
   {
