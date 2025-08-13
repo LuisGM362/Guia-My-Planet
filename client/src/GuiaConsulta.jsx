@@ -541,6 +541,12 @@ const GuiaConsulta = () => {
       </>
     )}
       <div className="fixed-bottom bg-light py-2 border-top text-center">
+        {seleccion !== null && (
+          <Button variant="secondary" className="mb-2" onClick={handleVolver}>
+            ← Volver a secciones
+          </Button>
+        )}
+        <br />
         <Button variant="secondary" onClick={() => navigate('/')}>
           ← Volver inicio
         </Button>
