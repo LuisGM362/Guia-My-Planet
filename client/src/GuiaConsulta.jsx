@@ -441,7 +441,7 @@ const GuiaConsulta = () => {
 
   return (
     <Container className="mt-4">
-      <h1 className="text-center">Guía de Consulta</h1>
+      <h1 className="text-center">Guía de Consulta <span style={{color:'red'}}>TEST</span></h1>
       {!seleccion && (
         <>
           <p>
