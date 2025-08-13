@@ -3,6 +3,7 @@ import { Container, Button, ListGroup, Form, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import ChestActivator from './components/ChestActivator';
 import PointActivator from './components/PointActivator';
+import escapeImg from './assets/imagenes/escape.jpg';
 
 const skillsDetalles = [
   {
@@ -38,7 +39,8 @@ const skillsDetalles = [
     nombre: 'ESCAPE',
     descripcion:
       `Al usar esta SKILL tiene el efecto de poder mover la UNIT KING para izquierda o derecha al final del tablero. 
-      Este MOV no consume COST, esto se puede realizar mientras no haya ninguna pieza en el tablero que interrumpa el MOV.`
+      Este MOV no consume COST, esto se puede realizar mientras no haya ninguna pieza en el tablero que interrumpa el MOV.`,
+    componente: <img src={escapeImg} alt="Ejemplo de escape" style={{ maxWidth: '300px', margin: '10px 0' }} />
   },
   {
     nombre: 'RELOAD',
