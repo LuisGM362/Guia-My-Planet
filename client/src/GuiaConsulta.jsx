@@ -5,6 +5,7 @@ import ChestActivator from './components/ChestActivator';
 import PointActivator from './components/PointActivator';
 import escapeImg from './assets/imagenes/escape.jpg';
 import atkSilenceImg from './assets/imagenes/atk_silence.jpg';
+import atkBombImg from './assets/imagenes/atk_bomb.jpg';
 
 const skillsDetalles = [
   {
@@ -269,6 +270,128 @@ const kingCardDetalles = [
     componente: <img src={escapeImg} alt="Ejemplo de escape" style={{ maxWidth: '300px', margin: '10px 0' }} /> 
   }
 ];
+const ammoDetalles = [
+  {
+    nombre: 'DADO x2',
+    descripcion: `La UNIT equipada con esta AMMO duplica el valor del dado lanzado, después de activar se descarta esta AMMO.`
+  },
+  {
+    nombre: 'BOMB',
+    descripcion: `La UNIT equipada con esta AMMO no puede activar ninguna SKILLS, 
+        si la UNIT utiliza alguna SKILL se activa una explosión que se realiza de esta manera:
+        Elimina a las UNIT de alrededor, si no se activa la AMMO seguirá equipada a la UNIT, 
+        cuando se activa se descarta esta AMMO.`,
+    componente: <img src={atkBombImg} alt="Ejemplo de BOMB" style={{ maxWidth: '300px', margin: '10px 0' }} />  
+  },
+  {
+    nombre: 'ELITE CARD',
+    descripcion: `La UNIT equipada con esta AMMO puede buscar en la zona de TROOP CARDS una ELITE CARD y la añade a tu mano, después se baraja el TROOP CARDS, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'FALSE',
+    descripcion: `La UNIT equipada con esta AMMO al momento de obtenerlo pierdes tu turno, el COST que tenías pasa a control del rival junto con el control de las UNIT hasta que se acabe el COST que tenías, el efecto se activa en el momento que la UNIT se le equipa esta AMMO, después de activar se descarta esta AMMO.`
+  },
+  {
+    nombre: 'ATK +',
+    descripcion: `La UNIT equipada con esta AMMO puede realizar un ATK SILENCE:
+        Elimina a una UNIT adyacente a la UNIT equipada con esta AMMO, 
+        este ATK SILENCE no consume COST de los que posee el jugador, cuando se activa se descarta esta AMMO.`,
+    componente: <img src={atkSilenceImg} alt="Ejemplo de ATK SILENCE" style={{ maxWidth: '300px', margin: '10px 0' }} />
+  },
+  {
+    nombre: 'NOT ATK',
+    descripcion: `La UNIT equipada con esta AMMO no puede realizar ningún ATK o ESPECIAL que sea de ATK del listado de SKILLS, 
+        esta AMMO se activa cuando está equipada, se descarta la misma cuando la UNIT es eliminada.`
+  },
+  {
+    nombre: 'KING CARD',
+    descripcion: `La UNIT equipada con esta AMMO puede tomar una KING CARD de la zona de KING CARDS, 
+        cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'NOT EXP',
+    descripcion: `La UNIT equipada con esta AMMO descarta una KING CARD de tu mano al TRASH, 
+        se activa el efecto cuando se equipa el AMMO, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'DADO +3',
+    descripcion: `La UNIT equipada con esta AMMO añade +3 al valor del dado lanzado, después de activar se descarta esta AMMO.`
+  },
+  {
+    nombre: 'TARGET',
+    descripcion: `La UNIT equipada con esta AMMO será marcada con el TARGET en la posición que se encuentre mientras 
+        tenga equipada esta AMMO, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'RARE CARD',
+    descripcion: `La UNIT equipada con esta AMMO puede buscar en la zona de TROOP CARDS una RARE CARD y la añade a tu mano, 
+        después se baraja el TROOP CARDS, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'INFILTRATION',
+    descripcion: `La UNIT equipada con esta AMMO al momento de obtenerlo pierdes tu turno, 
+        el COST que tenías pasa a control del rival, el efecto se activa en el momento que la UNIT se le equipa esta AMMO, 
+        después de activar se descarta esta AMMO.`
+  },
+  {
+    nombre: 'ATK EXTRA',
+    descripcion: `La UNIT equipada con esta AMMO puede realizar un ATK o ESPECIAL que realice un ATK de su listado de SKILLS, 
+        este ATK EXTRA no consume COST, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'MOV LESS',
+    descripcion: `La UNIT equipada con esta AMMO al realizar un MOV o ESPECIAL que realice un MOV de su listado de SKILLS, 
+        este consume COST x2, esta AMMO se activa cuando está equipada, se descarta la misma cuando la UNIT es eliminada.`
+  },
+  {
+    nombre: 'REPEAT',
+    descripcion: `La UNIT equipada con esta AMMO puede tomar la última CARD usada en el TRASH y añadirla a tu mano, 
+        cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'LOST EXP',
+    descripcion: `La UNIT equipada con esta AMMO tiene que tomar una KING CARD de la zona de KINGS CARDS al TRASH, 
+        esta AMMO se activa cuando está equipada, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'SHIELD',
+    descripcion: `La UNIT equipada con esta AMMO no es destruida por un ATK que el rival realice contra la UNIT, 
+        esta AMMO se descarta y la UNIT no es destruida.`
+  },
+  {
+    nombre: 'NOT MOV/ATK',
+    descripcion: `La UNIT equipada con esta AMMO no puede realizar ningún MOV ni ATK pero sí puede realizar los ESPECIAL, 
+        se descarta la misma cuando la UNIT es eliminada.`
+  },
+  {
+    nombre: 'COMMON CARD',
+    descripcion: `La UNIT equipada con esta AMMO puede buscar en la zona de TROOP CARDS una COMMON CARD y la añade a tu mano, 
+        después se baraja el TROOP CARDS, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'LOST TROOP',
+    descripcion: `La UNIT equipada con esta AMMO tiene que tomar una TROOP CARD de la zona de TROOP CARDS al TRASH, 
+        esta AMMO se activa cuando está equipada, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'MOV EXTRA',
+    descripcion: `La UNIT equipada con esta AMMO puede realizar un MOV o ESPECIAL que realice un MOV de su listado de SKILLS, 
+        esté MOV EXTRA no consume COST, cuando se activa se descarta esta AMMO.`
+  },
+  {
+    nombre: 'LOST TURN',
+    descripcion: `La UNIT equipada con esta AMMO al momento de obtenerlo pierdes tu turno y comienza el del rival, 
+        el efecto se activa en el momento que la UNIT se le equipa esta AMMO, después de activar se descarta esta AMMO.`
+  },
+  {
+    nombre: 'DADO +1',
+    descripcion: `La UNIT equipada con esta AMMO añade +1 al valor del dado lanzado, después de activar se descarta esta AMMO.`
+  },
+  {
+    nombre: 'LOST UNIT',
+    descripcion: `La UNIT equipada con esta AMMO es eliminada del tablero del juego, cuando se activa se descarta esta AMMO.`
+  },
+];
 
 const secciones = [
   {
@@ -281,11 +404,7 @@ const secciones = [
   },
   {
     titulo: 'AMMO',
-    detalles: [
-      'CHEST aparece en una posición aleatoria del tablero.',
-      'Puedes activar CHEST usando el botón correspondiente.',
-      'Si la posición está ocupada, puedes generar una nueva ubicación.'
-    ]
+    detalles: ammoDetalles
   }
 ];
 
@@ -306,6 +425,11 @@ const GuiaConsulta = () => {
       return kingCardDetalles.filter(card =>
         card.nombre.toLowerCase().includes(busqueda.toLowerCase())
       );
+    }
+    if (secciones[seleccion]?.titulo === 'AMMO') {
+        return ammoDetalles.filter(ammo =>
+            ammo.nombre.toLowerCase().includes(busqueda.toLowerCase())
+        );
     }
     return secciones[seleccion]?.detalles || [];
   })();
