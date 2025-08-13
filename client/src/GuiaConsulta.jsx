@@ -445,7 +445,7 @@ const GuiaConsulta = () => {
       {!seleccion && (
         <>
           <p>
-            Haz clic en una sección para ver el detalle de <strong>SKILLS</strong>, <strong>KING CARDS</strong> o <strong>AMMOs</strong>.
+            Haz clic en una sección para ver el detalle de <strong>SKILLS</strong>, <strong>KING CARDS</strong> o <strong>AMMO</strong>.
           </p>
           <ListGroup>
             {secciones.map((seccion, idx) => (
