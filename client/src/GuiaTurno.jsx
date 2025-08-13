@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import movImg from './assets/imagenes/mov.jpg';
+import atkImg from './assets/imagenes/atk.jpg';
 
 function GuiaTurno() {
   const navigate = useNavigate();
@@ -63,6 +64,8 @@ function GuiaTurno() {
         <br />
             <strong>ATK:</strong> esto indica el ataque que puede realizar la pieza dentro del tablero hacia otra pieza,
         la x indica la posición de la pieza que será eliminada del tablero: 
+        <img src={atkImg} alt="Ejemplo de ataque" style={{ maxWidth: '300px', margin: '10px 0' }} />
+        <br />
         la x indica en qué posición debe estar una pieza para que sea eliminada por esta <strong>UNIT</strong>, 
         cuando la <strong>UNIT</strong> realiza un <strong>ATK</strong> hace que se active el <strong>TARGET</strong> del 
         rival en la posición de la <strong>UNIT</strong> que realizó el <strong>ATK</strong>. 
