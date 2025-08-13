@@ -445,7 +445,7 @@ const GuiaConsulta = () => {
       {!seleccion && (
         <>
           <p>
-            Haz clic en una sección para ver el detalle de <strong>SKILLS</strong>, <strong>KING CARDS</strong> o <strong>CHEST</strong>.
+            Haz clic en una sección para ver el detalle de <strong>SKILLS</strong>, <strong>KING CARDS</strong> o <strong>AMMO</strong>.
           </p>
           <ListGroup>
             {secciones.map((seccion, idx) => (
@@ -460,7 +460,7 @@ const GuiaConsulta = () => {
           </ListGroup>
         </>
       )}
-      
+
       {seleccion !== null && (
         <>
           <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
