@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import ChestActivator from './components/ChestActivator';
 import PointActivator from './components/PointActivator';
 import escapeImg from './assets/imagenes/escape.jpg';
+import atkSilenceImg from './assets/imagenes/atk_silence.jpg';
 
 const skillsDetalles = [
   {
@@ -118,7 +119,8 @@ const kingCardDetalles = [
     nombre: 'ATK +',
     limit: 1,
     descripcion: `Realiza un ATK SILENCE: elimina a una UNIT adyacente a la UNIT seleccionada con esta KING CARD. 
-        Este ATK SILENCE no consume COST. Después de activar se descarta esta KING CARD al TRASH.`
+        Este ATK SILENCE no consume COST. Después de activar se descarta esta KING CARD al TRASH.`,
+    componente: <img src={atkSilenceImg} alt="Ejemplo de ATK SILENCE" style={{ maxWidth: '300px', margin: '10px 0' }} />
   },
   {
     nombre: 'ATK EXTRA',
