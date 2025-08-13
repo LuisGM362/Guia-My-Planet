@@ -460,8 +460,7 @@ const GuiaConsulta = () => {
           </ListGroup>
         </>
       )}
-      // ...existing code...
-
+      
       {seleccion !== null && (
         <>
           <h4 className="mt-4">{secciones[seleccion].titulo}</h4>
