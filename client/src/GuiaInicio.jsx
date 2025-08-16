@@ -43,8 +43,8 @@ function GuiaInicio() {
         <br />
         <strong>Paso 5:</strong>
         <br />
-        Tira el dado, segun ese numero puedes ubicar los <strong>CHEST</strong> dentro de la zona 
-        <strong>COMBAT (FILA 4 - 10 / COLUMNA 1 - 13)</strong>
+        Tira el dado, segun ese numero puedes ubicar los <strong>CHEST</strong> dentro de la 
+        zona <strong>COMBAT (FILA 4 - 10 / COLUMNA 1 - 13)</strong>
         <br />
         Activo el <strong>CHEST:</strong>
         <br />
@@ -52,13 +52,15 @@ function GuiaInicio() {
         <br />
         <strong>Paso en turno:</strong>
         <br />
-        Cada inicio de turno tira el dado, si sale el numero 1 puedes tomar una 
-        <strong>KING CARD</strong> o <strong>TROOP CARD</strong> y luego vuelve a lanzar el dado.
+        Cada inicio de turno tira el dado, si sale el numero 1 puedes tomar 
+        una <strong>KING CARD</strong> o <strong>TROOP CARD</strong> y luego vuelve a lanzar el dado.
         Puedes activar de tu mano una  o varias <strong>CARD</strong> sin importar el orden de ejecucion,
-        Luego de usar las <strong>KING CARD</strong> cada una va a la zona de <strong>TRASH</strong>, si es una 
-        <strong>TROOP CARD</strong> se debe ubicar en la zona <strong>TROOP LIST</strong> y la <strong>UNIT</strong> 
-        se ubica en el <strong>POINT</strong> si no esta ocupado por otra <strong>UNIT</strong>.
-        En tu turno puede usar los <strong>COST</strong> del dado para activar las <strong>UNIT</strong>, hasta que se te acaben.
+        Luego de usar las <strong>KING CARD</strong> cada una va a la zona de <strong>TRASH</strong>, si es 
+        una <strong>TROOP CARD</strong> se debe ubicar en la zona <strong>TROOP LIST</strong> y 
+        la <strong>UNIT</strong> se ubica en el <strong>POINT</strong> 
+        si no esta ocupado por otra <strong>UNIT</strong>.
+        En tu turno puede usar los <strong>COST</strong> del dado para activar las <strong>UNIT</strong>, 
+        hasta que se te acaben.
         Cuando se termina el turno debes tener solo maximo 3 <strong>CARD</strong> en tu mano.
       </p>
       <p className="text-center">Fin de la guia de inicio.</p>
