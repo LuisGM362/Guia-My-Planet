@@ -57,8 +57,8 @@ function GuiaInicio() {
         Puedes activar de tu mano una  o varias <strong>CARD</strong> sin importar el orden de ejecucion,
         Luego de usar las <strong>KING CARD</strong> cada una va a la zona de <strong>TRASH</strong>, si es 
         una <strong>TROOP CARD</strong> se debe ubicar en la zona <strong>TROOP LIST</strong> y 
-        la <strong>UNIT</strong> se ubica en el <strong>POINT</strong> 
-        si no esta ocupado por otra <strong>UNIT</strong>.
+        la <strong>UNIT</strong> se ubica en el <strong>POINT</strong> si 
+        no esta ocupado por otra <strong>UNIT</strong>.
         En tu turno puede usar los <strong>COST</strong> del dado para activar las <strong>UNIT</strong>, 
         hasta que se te acaben.
         Cuando se termina el turno debes tener solo maximo 3 <strong>CARD</strong> en tu mano.
